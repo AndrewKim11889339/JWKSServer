@@ -6,9 +6,14 @@ from datetime import datetime, timedelta
 # RSA key generation function
 from cryptography.hazmat.primitives.asymmetric import rsa
 
+<<<<<<< HEAD
 
 def int_to_base64url(val: int) -> str:
     """Convert an integer to base64url string (for JWKS n and e)."""
+=======
+#change int to base64url for n and e in JWKS
+def int_to_base64url(val: int) -> str:
+>>>>>>> 9957aed190186835a4a2bc519f2cb48e88800fd2
     byte_length = (val.bit_length() + 7) // 8
     val_bytes = val.to_bytes(byte_length, byteorder="big")
     return base64.urlsafe_b64encode(val_bytes).rstrip(b"=").decode("utf-8")
